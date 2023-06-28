@@ -1,0 +1,69 @@
+.introducao {
+  /*  */
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* separação de 1 espaçõ para 2 espaços */
+  gap: 100px;
+  align-items: center; /* conteúdo sempre alinhado ao centro */
+}
+
+.introducao h1 {
+  font-size: 4.5rem;
+  line-height: 1.125; /* valor relativo ao font-size */
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.introducao h1::before {
+  /* Inserindo informação antes do h1 */
+  content: ""; /* NECESSÁRIO para que a info apareça */
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url("../img/detalhe.svg") no-repeat center; /* nao se repetir e que fique no centro */
+  position: absolute; /* Para que saia do bloco e tenha livre movimentação */
+  top: -15px;
+  left: -40px;
+  z-index: -1; /* para que fique atrás do h1 */
+}
+
+.introducao p {
+  font-size: 1.5rem;
+  color: #525252;
+}
+
+/* QUANDO OCORRER PONTOS DE QUEBRA DE LAYOLT */
+@media (max-width: 1000px) {
+  .introducao h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .introducao {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .introducao h1 {
+    font-size: 2rem;
+  }
+
+  .introducao h1::before {
+    width: 5px;
+    height: 1.3rem;
+    left: -8px;
+    top: 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .introducao {
+    grid-template-columns: 1fr;
+  }
+  .introducao img {
+    display: none;
+  }
+}
